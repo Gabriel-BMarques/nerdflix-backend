@@ -1,23 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { User } from 'src/models/User.model';
-import { UserRepository } from 'src/repositories/User.repository';
-import { v4 as uuid } from 'uuid';
+import { User } from 'src/schemas/User.schema';
 import { CreateUserDTO } from './CreateUser.dto';
 
 @Injectable()
 export class CreateUserService {
-  constructor(
-    private readonly userRepository: UserRepository
-  ) {}
-
   async execute(payload: CreateUserDTO): Promise<User> {
-    const newUser: User = {
-      ...payload,
-      id: uuid(),
-      insertedAt: new Date(),
-      updatedAt: new Date(),
-    };
+    const newUser: User = payload;
 
-    return this.userRepository.create(newUser);
+    return newUser;
   }
 }
