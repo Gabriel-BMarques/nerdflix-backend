@@ -58,6 +58,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Environment variables
+
+Create .env file with the following content
+
+```bash
+DB_URL="mongodb+srv://felipe:admin@clusternerd.tbookvh.mongodb.net/?retryWrites=true&w=majority&appName=ClusterNerd"
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
